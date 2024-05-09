@@ -35,4 +35,3 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push to DockerHub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/purchase-service:latest
-
