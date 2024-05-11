@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from typing_extensions import List, Annotated
-import logging
 from models import PurchaseOut, PurchaseIn, PurchaseUpdate
 from .db_manager import add_purchase, get_all_purchase, get_purchase, delete_purchase, update_purchase
 from .db import database
+from service import get_all_payments
 
 purchases = APIRouter()
 
@@ -30,6 +30,17 @@ async def get_purchases():
         return await get_all_purchase()
     except HTTPException as http_exc:
         # Переадресация исключений от функции get_all_purchase()
+        raise http_exc
+    except Exception as e:
+        raise HTTPException(status_code=500, detail='Internal server error')
+
+
+@purchases.get('/get_payments')
+async def get_payments():
+    try:
+        return await get_all_payments()
+    except HTTPException as http_exc:
+        # Переадресация исключений от функции get_all_payments()
         raise http_exc
     except Exception as e:
         raise HTTPException(status_code=500, detail='Internal server error')
