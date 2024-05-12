@@ -11,6 +11,7 @@ app = FastAPI(title='Online store for board games: Purchase', openapi_url='/api/
 
 Instrumentator().instrument(app).expose(app)
 
+#uvicorn payment-service.app.api.main:app --port 8010
 #pip install prometheus_fastapi_instrumentator
 #sum(count_over_time({job="docker"} |~ "status=200" [1m])) loki
 #rate(process_cpu_seconds_total[5m]) prom CPU usage
