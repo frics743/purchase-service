@@ -19,6 +19,7 @@ Instrumentator().instrument(app).expose(app)
 #{job="docker"} |= purchase-service |= status_code=200 loki Log Data
 #sum(count_over_time({job="docker"} |~ "status=200" [10m])) loki Successful operations
 #docker compose up --build
+
 #purchaseuser
 #admin
 
