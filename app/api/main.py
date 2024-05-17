@@ -28,7 +28,7 @@ Instrumentator().instrument(app).expose(app)
 KEYCLOAK_URL = 'http://keycloak:8080/'
 KEYCLOAK_CLIENT_ID = 'purchaseClient'
 KEYCLOAK_REALM = 'master'
-KEYCLOAK_CLIENT_SECRET = 'HDc7n5E4NYqVHbrOk8zq3n6C0hoo6g0x'
+KEYCLOAK_CLIENT_SECRET = '4t7o7Iut7TfmpkUcMvtJL66LZpZo0Eyk'
 
 keycloak_openid = KeycloakOpenID(server_url=KEYCLOAK_URL,
                                  client_id=KEYCLOAK_CLIENT_ID,
