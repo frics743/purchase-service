@@ -72,3 +72,4 @@ async def shutdown():
     await database.disconnect()
 
 app.include_router(purchases, prefix='/api/purchases', tags=['Purchases'])
+
